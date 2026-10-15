@@ -11,7 +11,7 @@ Three pages, built with [Astro](https://astro.build) and hosted free on [Vercel]
 Live data:
 
 - **Music** (On repeat card and chalkboard): `src/pages/api/music.ts` asks Last.fm for your latest song and top artist this month. It runs on Vercel's servers, so your API key stays private.
-- **Workouts:** coming next (Apple Health via an iOS Shortcut).
+- **Workouts** (Training card and chalkboard): `src/pages/api/workouts.ts`. Your iPhone Shortcut sends recent workouts here; the page shows this week's count, minutes per day and your latest workout. Only type, day and minutes are shown.
 - **Guestbook:** works in the visitor's browser for now; saving notes for everyone comes next (Supabase).
 
 Other files: `public/site.js` (night mode + language picker), `public/lately.js` (music + guestbook), `public/travel/` (trip photos).

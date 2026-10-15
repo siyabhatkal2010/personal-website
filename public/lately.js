@@ -36,6 +36,45 @@
     })
     .catch(offline);
 
+  // ---------- Workouts ----------
+  var wkBoard = document.getElementById('wk-board');
+  var wkTitle = document.getElementById('wk-title');
+  var wkLatest = document.getElementById('wk-latest');
+  var wkBars = document.getElementById('wk-bars');
+
+  fetch('/api/workouts')
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (!d || !d.ok) return;
+      var n = d.week.count;
+      if (wkTitle) wkTitle.textContent = n === 1 ? '1 workout this week' : n + ' workouts this week';
+      if (wkBoard) wkBoard.textContent = n + (n === 1 ? ' workout' : ' workouts') + ' this wk';
+      if (wkLatest) {
+        wkLatest.textContent = d.latest
+          ? 'Latest: ' + d.latest.type + ' · ' + d.latest.minutes + ' min · ' + d.latest.day
+          : 'Rest week so far.';
+      }
+      if (wkBars) {
+        var max = Math.max(60, Math.max.apply(null, d.week.days));
+        var names = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        var label = [];
+        Array.prototype.forEach.call(wkBars.children, function (col, i) {
+          var bar = col.firstElementChild;
+          var mins = d.week.days[i] || 0;
+          var pct = Math.round((mins / max) * 100);
+          if (!bar) return;
+          bar.style.border = '1.5px solid #111';
+          bar.style.background = mins
+            ? 'linear-gradient(to top, #500000 ' + pct + '%, #FFFFFF ' + pct + '%)'
+            : '#FFFFFF';
+          bar.title = names[i] + ': ' + mins + ' min';
+          label.push(names[i] + ' ' + mins + ' minutes');
+        });
+        wkBars.setAttribute('aria-label', 'Workout minutes this week: ' + label.join(', '));
+      }
+    })
+    .catch(function () {});
+
   // ---------- Guestbook ----------
   // For now notes live only in this visitor's browser tab.
   // Next step: save them to a free Supabase table so everyone sees them.

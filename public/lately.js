@@ -36,7 +36,7 @@
     })
     .catch(offline);
 
-  // ---------- Workouts ----------
+  // ---------- Exercise minutes ----------
   var wkBoard = document.getElementById('wk-board');
   var wkTitle = document.getElementById('wk-title');
   var wkLatest = document.getElementById('wk-latest');
@@ -46,21 +46,21 @@
     .then(function (r) { return r.json(); })
     .then(function (d) {
       if (!d || !d.ok) return;
-      var n = d.week.count;
-      if (wkTitle) wkTitle.textContent = n === 1 ? '1 workout this week' : n + ' workouts this week';
-      if (wkBoard) wkBoard.textContent = n + (n === 1 ? ' workout' : ' workouts') + ' this wk';
+      var w = d.week;
+      if (wkTitle) wkTitle.textContent = w.total + ' exercise minutes this week';
+      if (wkBoard) wkBoard.textContent = w.total + ' min this wk';
       if (wkLatest) {
-        wkLatest.textContent = d.latest
-          ? 'Latest: ' + d.latest.type + ' · ' + d.latest.minutes + ' min · ' + d.latest.day
+        wkLatest.textContent = w.total
+          ? 'Active ' + w.activeDays + ' of 7 days · best day ' + w.bestDay.day + ' (' + w.bestDay.minutes + ' min)'
           : 'Rest week so far.';
       }
       if (wkBars) {
-        var max = Math.max(60, Math.max.apply(null, d.week.days));
+        var max = Math.max(60, Math.max.apply(null, w.days));
         var names = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
         var label = [];
         Array.prototype.forEach.call(wkBars.children, function (col, i) {
           var bar = col.firstElementChild;
-          var mins = d.week.days[i] || 0;
+          var mins = w.days[i] || 0;
           var pct = Math.round((mins / max) * 100);
           if (!bar) return;
           bar.style.border = '1.5px solid #111';
@@ -70,7 +70,7 @@
           bar.title = names[i] + ': ' + mins + ' min';
           label.push(names[i] + ' ' + mins + ' minutes');
         });
-        wkBars.setAttribute('aria-label', 'Workout minutes this week: ' + label.join(', '));
+        wkBars.setAttribute('aria-label', 'Exercise minutes this week: ' + label.join(', '));
       }
     })
     .catch(function () {});

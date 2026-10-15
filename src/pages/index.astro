@@ -1,0 +1,448 @@
+---
+// index page. Edit the text right in the HTML below.
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Siya Bhatkal · Projects & work</title>
+<meta name="description" content="CS senior at Texas A&M focused on ML, AI and data visualization. Projects, experience and more.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&amp;family=Atkinson+Hyperlegible+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style is:global>
+
+body{margin:0;background:#E6EDEE}
+a{color:#111111}a:hover{color:#444444}
+.fx *{transform-box:fill-box}
+@keyframes cloud{from{transform:translateX(-300px)}to{transform:translateX(1900px)}}
+@keyframes plane{0%{transform:translate(-200px,30px)}100%{transform:translate(1900px,-50px)}}
+@keyframes wave{from{transform:translateX(0)}to{transform:translateX(-200px)}}
+@keyframes boat{from{transform:translateX(-160px)}to{transform:translateX(1760px)}}
+@keyframes rock{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
+@keyframes wander{
+ 0%{left:70%;top:12%}
+ 14%{left:84%;top:30%}
+ 28%{left:62%;top:48%}
+ 42%{left:34%;top:34%}
+ 56%{left:6%;top:52%}
+ 70%{left:18%;top:14%}
+ 84%{left:46%;top:8%}
+ 100%{left:70%;top:12%}}
+@keyframes hover{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(3deg)}}
+@keyframes legs{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(14deg)}}
+@keyframes blinkEye{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+@keyframes shadow{0%,100%{transform:scaleX(1);opacity:.18}50%{transform:scaleX(.75);opacity:.1}}
+@keyframes hopA{0%{transform:translateY(0) rotate(0) scale(1,1)}15%{transform:translateY(4px) scale(1.12,.88)}45%{transform:translateY(-46px) rotate(-360deg) scale(.95,1.08)}75%{transform:translateY(0) rotate(-360deg) scale(1.1,.9)}100%{transform:translateY(0) rotate(-360deg) scale(1,1)}}
+@keyframes hopB{0%{transform:translateY(0) rotate(0) scale(1,1)}15%{transform:translateY(4px) scale(1.12,.88)}45%{transform:translateY(-46px) rotate(360deg) scale(.95,1.08)}75%{transform:translateY(0) rotate(360deg) scale(1.1,.9)}100%{transform:translateY(0) rotate(360deg) scale(1,1)}}
+@keyframes popA{0%{opacity:1;transform:rotate(var(--a)) translateY(0) scale(.2)}100%{opacity:0;transform:rotate(var(--a)) translateY(-84px) scale(1)}}
+@keyframes popB{0%{opacity:1;transform:rotate(var(--a)) translateY(0) scale(.2)}100%{opacity:0;transform:rotate(var(--a)) translateY(-84px) scale(1)}}
+@keyframes bubA{0%{opacity:0;transform:translateY(6px) scale(.85)}100%{opacity:1;transform:none}}
+@keyframes bubB{0%{opacity:0;transform:translateY(6px) scale(.85)}100%{opacity:1;transform:none}}
+@keyframes bang{0%{opacity:0;transform:translateY(6px) scale(.4)}20%{opacity:1;transform:translateY(-4px) scale(1.2)}70%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes cursor{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+
+.cloudA{animation:cloud 120s linear infinite}
+.cloudB{animation:cloud 170s linear infinite}
+.plane{animation:plane 40s linear infinite}
+.wave{animation:wave 9s linear infinite}
+.wave2{animation:wave 14s linear infinite reverse}
+.boat{animation:boat 60s linear infinite}
+.rock{animation:rock 2.6s ease-in-out infinite;transform-origin:50% 100%}
+.beacon{animation:blink 1.6s ease-in-out infinite}
+
+.siya{position:fixed;z-index:30;width:120px;height:210px;margin:0;padding:0;border:0;background:none;cursor:pointer;animation:wander 54s cubic-bezier(.45,.05,.55,.95) infinite}
+.siya:hover,.siya:focus-visible,.siya:hover .bod{animation-play-state:paused}
+.siya:focus-visible{outline:3px dashed #111;outline-offset:6px;border-radius:12px}
+.siya .bod{display:block;width:100%;height:100%;animation:hover 3.6s ease-in-out infinite}
+.siya .flip{display:block;width:100%;height:100%;transform-origin:50% 70%}
+.siya .leg{animation:legs 1.4s ease-in-out infinite;transform-origin:50% 0%}
+.siya .leg2{animation:legs 1.4s ease-in-out infinite reverse;transform-origin:50% 0%}
+.siya .eye{animation:blinkEye 4.5s infinite;transform-origin:50% 50%}
+.siya .shad{position:absolute;left:30px;bottom:-26px;width:60px;height:10px;border-radius:50%;background:#111;animation:shadow 3.6s ease-in-out infinite}
+.siya.jA .flip{animation:hopA .85s cubic-bezier(.3,.7,.3,1)}
+.siya.jB .flip{animation:hopB .85s cubic-bezier(.3,.7,.3,1)}
+.siya .spark{position:absolute;left:50%;top:62%;width:16px;height:16px;margin:-8px;opacity:0;pointer-events:none}
+.siya.jA .spark{animation:popA .7s ease-out}
+.siya.jB .spark{animation:popB .7s ease-out}
+.siya .bangs{position:absolute;right:-6px;top:58px;opacity:0;font:700 28px/1 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif;color:#111;pointer-events:none}
+.siya.jA .bangs{animation:bang .9s ease-out}
+.siya.jB .bangs{animation:bang .9s ease-out}
+.bubble{position:absolute;bottom:100%;left:50%;margin:0 0 6px -115px;width:230px;box-sizing:border-box;padding:10px 14px 12px;border:2.5px solid #111;border-radius:10px;background:#FFFFFF;color:#111;font:500 13px/1.4 'Atkinson Hyperlegible Mono', ui-monospace, monospace;text-align:left;box-shadow:4px 4px 0 #111;pointer-events:none}
+.bubble .nm{display:block;font:700 11px/1 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.bubble .cur{position:absolute;right:10px;bottom:4px;font-size:10px;animation:cursor .8s ease-in-out infinite}
+.siya.jA .bubble{animation:bubA .35s ease both}
+.siya.jB .bubble{animation:bubB .35s ease both}
+@keyframes segIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes live{0%,100%{opacity:1}50%{opacity:.2}}
+.seg{transform-origin:0 50%;animation:segIn .35s ease both}
+.live{animation:live 1.4s ease-in-out infinite}
+.card{transition:transform .15s ease, box-shadow .15s ease}
+.card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 #111}
+.btn{transition:transform .12s ease, box-shadow .12s ease}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #111}
+.btn:active{transform:translate(2px,2px);box-shadow:0 0 0 #111}
+@media (max-width: 700px){.siya{width:90px;height:158px}.bubble{width:180px;margin-left:-90px}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}.siya{left:78%;top:18%}}
+
+/* ---- night mode ---- */
+@keyframes star{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes glowp{0%,100%{opacity:.75}50%{opacity:1}}
+.scenebox,.contentbox{transition:filter .7s ease}
+.night .scenebox{filter:invert(1) hue-rotate(180deg) brightness(.85)}
+.night .contentbox{filter:invert(1) hue-rotate(180deg)}
+.night .contentbox img,.night .contentbox .keep{filter:invert(1) hue-rotate(180deg)}
+.nightfx{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .8s ease}
+.night .nightfx{opacity:1}
+.star{animation:star 3s ease-in-out infinite}
+.glowp{animation:glowp 2.2s ease-in-out infinite}
+.modebtn{width:44px;height:44px;border:2px solid #111;border-radius:999px;background:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;box-shadow:3px 3px 0 #111;transition:transform .12s ease}
+.modebtn:hover{transform:translate(-1px,-1px)}
+.modebtn:focus-visible{outline:3px dashed #111;outline-offset:3px}
+
+.modebtn .ic-sun{display:none}
+.night .modebtn .ic-moon{display:none}
+.night .modebtn .ic-sun{display:inline}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:16px;top:16px;z-index:100;background:#fff;padding:10px 14px;border:2px solid #111;border-radius:10px}
+@media (max-width: 640px){h1{font-size:48px !important}header nav{flex-wrap:nowrap !important;gap:0 !important;padding:4px !important}header nav a{padding:8px 9px !important;font-size:13px;white-space:nowrap;min-height:40px}header nav a svg{display:none}header{gap:10px !important}}
+</style>
+<script is:inline>try{if(localStorage.getItem('siya-night')==='1')document.documentElement.classList.add('pre-night')}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#top">Skip to content</a>
+<div id="root" class="" style="position: relative; min-height: 100vh; color: #111111; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif, Helvetica, sans-serif; font-size: 17px; line-height: 1.6">
+
+<!-- ========== QUIET LINE-ART SKYLINE (fixed background) ========== -->
+<div class="scenebox" style="position: fixed; inset: 0; z-index: 0; overflow: hidden; background: #E6EDEE" aria-hidden="true">
+<svg class="fx" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice" width="100%" height="100%" style="display: block">
+<!-- sun -->
+<circle cx="1340" cy="190" r="56" fill="none" stroke="#BDBDB8" stroke-width="2"></circle>
+<circle cx="1340" cy="190" r="72" fill="none" stroke="#DADAD5" stroke-width="1.5" stroke-dasharray="4 8"></circle>
+<!-- clouds -->
+<g class="cloudA" style="animation-delay: -30s" fill="#E6EDEE" stroke="#C9C9C4" stroke-width="2">
+<path d="M150 220 a26 26 0 0 1 40 -22 a34 34 0 0 1 62 8 a22 22 0 0 1 12 42 h-110 a16 16 0 0 1 -4 -28 z"></path>
+</g>
+<g class="cloudB" style="animation-delay: -90s" fill="#E6EDEE" stroke="#D3D3CE" stroke-width="2">
+<path d="M150 340 a20 20 0 0 1 32 -16 a28 28 0 0 1 50 6 a18 18 0 0 1 8 32 h-86 a14 14 0 0 1 -4 -22 z"></path>
+</g>
+<g class="cloudA" style="animation-delay: -85s" fill="#E6EDEE" stroke="#C9C9C4" stroke-width="2">
+<path d="M150 130 a22 22 0 0 1 34 -18 a30 30 0 0 1 54 6 a20 20 0 0 1 10 36 h-94 a14 14 0 0 1 -4 -24 z"></path>
+</g>
+<!-- plane -->
+<g class="plane" style="animation-delay: -12s"><g transform="translate(0 120)" fill="#E6EDEE" stroke="#9B9B96" stroke-width="1.8" stroke-linejoin="round">
+<line x1="-220" y1="10" x2="-14" y2="10" stroke="#D3D3CE" stroke-dasharray="3 7"></line>
+<path d="M0 8 L50 8 L62 2 L65 4 L59 10 L65 16 L62 18 L50 12 L0 12 Z"></path>
+<path d="M22 8 L34 -6 L40 -6 L32 8 Z"></path>
+</g></g>
+
+<!-- far towers: just outlines -->
+<g fill="none" stroke="#DCDCD7" stroke-width="1.5">
+<rect x="20" y="700" width="60" height="180"></rect><rect x="96" y="660" width="40" height="220"></rect><rect x="300" y="690" width="56" height="190"></rect>
+<rect x="1000" y="670" width="44" height="210"></rect><rect x="1190" y="700" width="60" height="180"></rect><rect x="1500" y="680" width="50" height="200"></rect>
+</g>
+
+<!-- landmark line drawings -->
+<g fill="#E6EDEE" stroke="#8E8E89" stroke-width="2" stroke-linejoin="round">
+<!-- curved-top tower -->
+<path d="M160 880 L160 640 Q200 600 240 640 L240 880 Z"></path>
+<!-- twisted tower -->
+<path d="M420 880 L430 590 Q456 566 492 576 L502 880 Z"></path>
+<path d="M440 592 Q452 700 444 880 M462 580 Q476 710 468 880 M482 576 Q496 720 488 880" stroke="#C4C4BF" stroke-width="1.5" fill="none"></path>
+<!-- needle tower -->
+<path d="M740 880 L740 720 L756 720 L756 620 L770 620 L770 520 L782 520 L782 430 L790 430 L792 300 L794 430 L802 430 L802 520 L814 520 L814 620 L828 620 L828 720 L844 720 L844 880 Z"></path>
+<path d="M792 440 L792 870 M776 530 L776 870 M808 530 L808 870" stroke="#C4C4BF" stroke-width="1.5" fill="none"></path>
+<!-- frame -->
+<path d="M1060 880 L1060 690 L1160 690 L1160 880 L1146 880 L1146 704 L1074 704 L1074 880 Z"></path>
+<!-- sail hotel -->
+<path d="M1380 890 L1380 640 Q1452 700 1462 890 Z"></path>
+<path d="M1380 640 L1380 890 L1368 890 L1368 626 Z"></path>
+<path d="M1388 840 L1452 840 M1388 790 L1440 790 M1388 740 L1420 740" stroke="#C4C4BF" stroke-width="1.5" fill="none"></path>
+</g>
+<!-- simple boxes between landmarks -->
+<g fill="#E6EDEE" stroke="#B3B3AE" stroke-width="1.8">
+<rect x="260" y="720" width="60" height="160"></rect><rect x="560" y="700" width="70" height="180"></rect><rect x="650" y="740" width="56" height="140"></rect>
+<rect x="880" y="710" width="64" height="170"></rect><rect x="960" y="740" width="70" height="140"></rect><rect x="1200" y="730" width="60" height="150"></rect><rect x="1280" y="760" width="56" height="120"></rect>
+</g>
+<circle class="beacon" cx="792" cy="298" r="3.5" fill="#111"></circle>
+
+<!-- ground + water lines -->
+<line x1="0" y1="880" x2="1600" y2="880" stroke="#8E8E89" stroke-width="2"></line>
+<g class="wave"><path d="M0 912 q25 -6 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0" fill="none" stroke="#C4C4BF" stroke-width="1.5"></path></g>
+<g class="wave2"><path d="M-200 944 q30 -6 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" fill="none" stroke="#DADAD5" stroke-width="1.5"></path></g>
+<!-- abra -->
+<g class="boat" style="animation-delay: -20s"><g transform="translate(0 896)"><g class="rock" fill="#E6EDEE" stroke="#8E8E89" stroke-width="1.8" stroke-linejoin="round">
+<path d="M0 14 L96 14 L84 28 L10 28 Z"></path><rect x="20" y="0" width="56" height="14"></rect><path d="M16 0 L80 0 L76 -6 L20 -6 Z"></path>
+</g></g></g>
+</svg>
+</div>
+
+
+
+<!-- ========== CONTENT ========== -->
+<div class="nightfx" aria-hidden="true">
+<svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice" width="100%" height="100%" style="display: block">
+<circle class="star" style="animation-delay: -2.94s" cx="75" cy="408" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.56s" cx="206" cy="376" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.6s" cx="362" cy="202" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.84s" cx="1049" cy="188" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.42s" cx="1573" cy="456" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.6s" cx="840" cy="398" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.97s" cx="1029" cy="202" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.58s" cx="592" cy="261" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.34s" cx="1259" cy="509" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.24s" cx="1500" cy="198" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.59s" cx="229" cy="136" r="2.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.44s" cx="438" cy="267" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.5s" cx="1357" cy="196" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.35s" cx="265" cy="485" r="2.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.67s" cx="1556" cy="122" r="2.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.26s" cx="908" cy="424" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.2s" cx="1498" cy="222" r="2.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.51s" cx="193" cy="391" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.77s" cx="280" cy="34" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.83s" cx="973" cy="432" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.47s" cx="1240" cy="262" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.04s" cx="1142" cy="87" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.58s" cx="1507" cy="352" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.48s" cx="305" cy="242" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.64s" cx="452" cy="34" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.78s" cx="1046" cy="143" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.18s" cx="878" cy="447" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.99s" cx="1535" cy="201" r="2.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.6s" cx="1078" cy="235" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.62s" cx="1092" cy="281" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.33s" cx="395" cy="331" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.42s" cx="326" cy="108" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.98s" cx="1505" cy="81" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.35s" cx="1081" cy="291" r="2.2" fill="#F6F1DE"></circle><circle cx="1340" cy="190" r="110" fill="#F6E7B0" opacity="0.08"></circle><circle cx="1340" cy="190" r="44" fill="#F3EACB"></circle><circle cx="1350" cy="182" r="7" fill="#E2D6AE"></circle><circle cx="1326" cy="202" r="5" fill="#E2D6AE"></circle>
+<rect class="glowp" style="animation-delay: -0.6476655296663247s" x="776" y="560" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.30169834784900385s" x="806" y="574" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.3018689460797075s" x="776" y="594" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.14487257333508552s" x="806" y="608" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.0717640086133784s" x="776" y="628" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.7313778338251711s" x="806" y="642" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.11599784954941361s" x="776" y="662" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.0148714663788405s" x="806" y="676" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.07499131688396976s" x="776" y="696" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.8672913673247717s" x="806" y="710" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.13971084714923787s" x="776" y="730" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.1814260266877301s" x="806" y="744" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.8490383782850279s" x="776" y="764" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.6537042493440761s" x="806" y="778" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.24760392229929118s" x="776" y="798" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.44647792921402907s" x="806" y="812" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.2548664448111786s" x="776" y="832" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.8954178849140113s" x="806" y="846" width="6" height="9" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.9525102111858401s" x="192" y="670" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.716936918097359s" x="214" y="670" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.28851016671487506s" x="170" y="700" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.6169636482038687s" x="192" y="700" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.1632003273249325s" x="170" y="730" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.0954889314191156s" x="214" y="730" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.11920233993246532s" x="170" y="760" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.3607999463635718s" x="192" y="760" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.628294340753583s" x="214" y="760" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.5887589630449823s" x="214" y="790" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.148847420517342s" x="192" y="820" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.9603496949851642s" x="214" y="850" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.8362456435704544s" x="270" y="750" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.9779262009516112s" x="270" y="780" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.3364317130687904s" x="292" y="780" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.3905907325473186s" x="292" y="840" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.4029840426088478s" x="592" y="790" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.7715828848934216s" x="614" y="820" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.9233905725995317s" x="592" y="850" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.23419158896346381s" x="614" y="850" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.5364659769450415s" x="660" y="770" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.49522966739382857s" x="682" y="770" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.7428439482525988s" x="660" y="800" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.8983748018986619s" x="682" y="800" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.8305930344233972s" x="890" y="740" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.768385654396434s" x="912" y="740" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.35243545698074064s" x="890" y="770" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.46667216736172223s" x="912" y="770" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.008187206770127853s" x="912" y="800" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.7385071457894508s" x="934" y="800" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.7990660201159043s" x="970" y="770" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.797957664640546s" x="992" y="800" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.268579131371418s" x="1014" y="800" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.1346952316860497s" x="970" y="830" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.3246063755441948s" x="992" y="830" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.10515120778053388s" x="1014" y="830" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.3025298645588559s" x="970" y="860" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.727219844069142s" x="992" y="860" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.7486647547476393s" x="1014" y="860" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.5045155131141545s" x="1232" y="760" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.7283268790565649s" x="1210" y="790" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.6978738529692299s" x="1232" y="790" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.2043752334963369s" x="1232" y="850" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.5295137834343602s" x="1290" y="790" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.046191442090496304s" x="1290" y="820" width="8" height="10" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.0863448517642287s" x="1312" y="850" width="8" height="10" fill="#FFD27A"></rect>
+<circle cx="792" cy="298" r="10" fill="#FF6B5E" opacity="0.5" class="glowp"></circle><circle cx="792" cy="298" r="4" fill="#FF8A7E"></circle>
+<path d="M1388 840 L1452 840 M1388 790 L1440 790 M1388 740 L1420 740" stroke="#FFD27A" stroke-width="3" opacity="0.8" class="glowp"></path>
+</svg>
+</div>
+
+<div class="contentbox" style="position: relative; z-index: 10">
+
+<header style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 22px; text-decoration: none">Siya Bhatkal</a>
+<div style="display: flex; align-items: center; gap: 12px">
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 5px; border: 2px solid #111; border-radius: 999px; background: #FFFFFF">
+<a href="#top" aria-current="page" class="keep" style="min-height: 40px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; background: #9CCBEA; color: #111111; font-weight: 700; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-7-6 11-3-5-5 3z"></path></svg>Projects &amp; work</a>
+<a href="/about" style="min-height: 40px; box-sizing: border-box; display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 999px; color: #333333; font-weight: 500; text-decoration: none">About me</a>
+<a href="/lately" style="min-height: 40px; box-sizing: border-box; display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 999px; color: #333333; font-weight: 500; text-decoration: none">Life lately</a>
+</nav>
+<button type="button" class="modebtn" id="modebtn" aria-pressed="false" aria-label="Night mode"><svg class="ic-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"></path></svg><svg class="ic-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"></path></svg></button>
+</div>
+</header>
+
+<section id="top" style="max-width: 1240px; margin: 0 auto; padding: 72px 24px 0; min-height: 540px; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 48px">
+<div style="flex: 1 1 460px; max-width: 580px; display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 14px; font-weight: 700; color: #1F5C8F">01 — PROJECTS &amp; WORK</p>
+<h1 style="margin: 0; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 72px; line-height: 0.98; letter-spacing: 0">Hi, I'm Siya.</h1>
+<p style="margin: 0; font-size: 20px; color: #2A2A2A">I'm a computer science senior at Texas A&amp;M with a minor in statistics, raised in Dubai with roots in India. I love turning messy data into things people actually use, from dashboards and pipelines to AI tools, and I'm looking for full-time roles in ML, AI and data visualization.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px">
+<a href="#projects" class="keep btn" style="min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; padding: 12px 22px; border: 2px solid #111; border-radius: 12px; background: #9CCBEA; color: #111111; font-weight: 700; text-decoration: none; box-shadow: 4px 4px 0 #111">See what I've built</a>
+<a href="/about" class="btn" style="min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border: 2px solid #111; border-radius: 12px; background: #FFFFFF; color: #111111; font-weight: 700; text-decoration: none; box-shadow: 4px 4px 0 #111">Next stop: India
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+<!-- character stats card -->
+<aside aria-label="Player profile" style="flex: 0 1 400px; min-width: 0; background: #FFFFFF; border: 2.5px solid #111; border-radius: 16px; box-shadow: 6px 6px 0 #111; overflow: hidden">
+<div class="keep" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 18px; background: #9CCBEA; color: #111111; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px">
+<span>PLAYER PROFILE</span><span>P1 ★</span>
+</div>
+<div style="padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<p style="margin: 0; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.1">Siya Bhatkal</p>
+<div style="display: grid; grid-template-columns: 96px 1fr; row-gap: 2px; font-size: 15px">
+<span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #555555">CLASS</span><span style="font-weight: 700">Data Builder</span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #555555">LEVEL</span><span style="font-weight: 700">Senior · Texas A&amp;M '27</span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #555555">ROUTE</span><span style="font-weight: 700">Dubai → India → Texas</span>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #555555">STATS</p>
+<div style="display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 10px">
+<span style="font-size: 14px; font-weight: 700">Python</span>
+<span role="img" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px" aria-label="Python: 8 out of 10"><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.30s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.35s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.40s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.45s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.50s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.55s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.60s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.65s"></span><span style="height: 12px; background: #FFFFFF; border: 1.5px solid #111"></span><span style="height: 12px; background: #FFFFFF; border: 1.5px solid #111"></span></span>
+</div>
+<div style="display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 10px">
+<span style="font-size: 14px; font-weight: 700">SQL</span>
+<span role="img" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px" aria-label="SQL: 7 out of 10"><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.45s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.50s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.55s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.60s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.65s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.70s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.75s"></span><span style="height: 12px; background: #FFFFFF; border: 1.5px solid #111"></span><span style="height: 12px; background: #FFFFFF; border: 1.5px solid #111"></span><span style="height: 12px; background: #FFFFFF; border: 1.5px solid #111"></span></span>
+</div>
+<div style="display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 10px">
+<span style="font-size: 14px; font-weight: 700">Machine Learning</span>
+<span role="img" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px" aria-label="Machine Learning: 6 out of 10"><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.60s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.65s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.70s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.75s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.80s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.85s"></span><span style="height: 12px; background: #FFFFFF; border: 1.5px solid #111"></span><span style="height: 12px; background: #FFFFFF; border: 1.5px solid #111"></span><span style="height: 12px; background: #FFFFFF; border: 1.5px solid #111"></span><span style="height: 12px; background: #FFFFFF; border: 1.5px solid #111"></span></span>
+</div>
+<div style="display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 10px">
+<span style="font-size: 14px; font-weight: 700">Data Viz</span>
+<span role="img" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px" aria-label="Data Viz: 8 out of 10"><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.75s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.80s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.85s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.90s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.95s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 1.00s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 1.05s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 1.10s"></span><span style="height: 12px; background: #FFFFFF; border: 1.5px solid #111"></span><span style="height: 12px; background: #FFFFFF; border: 1.5px solid #111"></span></span>
+</div>
+<div style="display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 10px">
+<span style="font-size: 14px; font-weight: 700">Automation</span>
+<span role="img" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px" aria-label="Automation: 8 out of 10"><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.90s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 0.95s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 1.00s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 1.05s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 1.10s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 1.15s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 1.20s"></span><span class="seg" style="height: 12px; background: #111111; border: 1.5px solid #111; animation-delay: 1.25s"></span><span style="height: 12px; background: #FFFFFF; border: 1.5px solid #111"></span><span style="height: 12px; background: #FFFFFF; border: 1.5px solid #111"></span></span>
+</div>
+
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #555555">LANGUAGES UNLOCKED · 5/5</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span style="padding: 3px 10px; border: 1.5px solid #111; border-radius: 999px; font-size: 13px; font-weight: 700">English</span>
+<span style="padding: 3px 10px; border: 1.5px solid #111; border-radius: 999px; font-size: 13px; font-weight: 700">Hindi</span>
+<span style="padding: 3px 10px; border: 1.5px solid #111; border-radius: 999px; font-size: 13px; font-weight: 700">Arabic</span>
+<span style="padding: 3px 10px; border: 1.5px solid #111; border-radius: 999px; font-size: 13px; font-weight: 700">Kannada</span>
+<span style="padding: 3px 10px; border: 1.5px solid #111; border-radius: 999px; font-size: 13px; font-weight: 700">Konkani</span>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #555555">SPECIAL ABILITIES</p>
+<p style="margin: 0; font-size: 14px">◆ Turns messy data into dashboards people use</p>
+<p style="margin: 0; font-size: 14px">◆ Automates the boring stuff</p>
+<p style="margin: 0; font-size: 14px">◆ Mixes a mean experimental drink</p>
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1.5px dashed #111; border-radius: 10px">
+<span class="live" style="width: 10px; height: 10px; border-radius: 50%; background: #111111; flex: none"></span>
+<span style="font-size: 14px"><strong>Status:</strong> Seeking full-time roles in ML, AI &amp; data viz · 2027</span>
+</div>
+</div>
+</aside>
+</section>
+
+<section id="projects" style="max-width: 1240px; margin: 0 auto; padding: 240px 24px 0">
+<h2 style="margin: 0 0 6px; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.05">Things I've built</h2>
+<p style="margin: 0 0 24px; color: #444444">Every city needs builders. Here's my corner of the skyline.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+<article class="card" style="background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px; box-shadow: 5px 5px 0 #111">
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px">[ UNDER CONSTRUCTION ]</p>
+<h3 style="margin: 0; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-size: 26px">Course Notes AI</h3>
+<p style="margin: 0; color: #2A2A2A">Upload course documents and get summarized notes plus a Q&amp;A chat that answers from your own material, with sources.</p>
+<p style="margin: 0; color: #555555; font-size: 14px">Python · Chroma · Ollama · OCR</p>
+</article>
+<article class="card" style="background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px; box-shadow: 5px 5px 0 #111">
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px">[ WORKING LOCALLY ]</p>
+<h3 style="margin: 0; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-size: 26px">Market Desk</h3>
+<p style="margin: 0; color: #2A2A2A">A beginner-friendly market dashboard that explains the numbers, plus a dachshund who gets the zoomies.</p>
+<p style="margin: 0; color: #555555; font-size: 14px">FastAPI · yfinance · JavaScript</p>
+</article>
+<article class="card" style="background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px; box-shadow: 5px 5px 0 #111">
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px">[ WORKING ]</p>
+<h3 style="margin: 0; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-size: 26px">Weekly Auto-Reply</h3>
+<p style="margin: 0; color: #2A2A2A">A small automation that makes sure I never miss replying to a weekly family message, in any time zone.</p>
+<p style="margin: 0; color: #555555; font-size: 14px">Node.js · Puppeteer · Task Scheduler</p>
+</article>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 180px 24px 160px">
+<h2 style="margin: 0 0 22px; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 36px; line-height: 1.1; height: 36px">Where I've worked</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px">
+<div class="card" style="background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 8px; box-shadow: 5px 5px 0 #111">
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #444444">SUMMER 2026 · AUSTIN, TX</p>
+<h3 style="margin: 0; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-size: 22px; line-height: 1.2">NXP Semiconductors</h3>
+<p style="margin: 0; font-weight: 700; font-size: 15px">Corporate Real Estate &amp; Workplace Intern</p>
+<p style="margin: 0; color: #2A2A2A; font-size: 15px">Automated the quarterly office data process in Excel, making occupancy and utilization numbers for leadership more accurate. Built Power BI dashboards for space planning, set up KPIs in the Fusion workplace platform, and built the department's SharePoint sites.</p>
+<p style="margin: 0; color: #555555; font-size: 13px">Excel · Power BI · Fusion · SharePoint</p>
+</div>
+<div class="card" style="background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 8px; box-shadow: 5px 5px 0 #111">
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #444444">2025–26 · COLLEGE STATION, TX</p>
+<h3 style="margin: 0; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-size: 22px; line-height: 1.2">Texas A&amp;M Global Engagement</h3>
+<p style="margin: 0; font-weight: 700; font-size: 15px">Technology &amp; Communications Student Worker</p>
+<p style="margin: 0; color: #2A2A2A; font-size: 15px">Built automated Python and SQL workflows and reusable data pipelines for departmental reporting, and turned non-technical teams' needs into working tools with clear documentation.</p>
+<p style="margin: 0; color: #555555; font-size: 13px">Python · SQL · Data pipelines</p>
+</div>
+<div class="card" style="background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 8px; box-shadow: 5px 5px 0 #111">
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #444444">SUMMER 2025 · TULSA, OK</p>
+<h3 style="margin: 0; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-size: 22px; line-height: 1.2">Kito Crosby</h3>
+<p style="margin: 0; font-weight: 700; font-size: 15px">Commercial Pricing Analyst Intern</p>
+<p style="margin: 0; color: #2A2A2A; font-size: 15px">Analyzed 1,000+ pricing and quote records to sharpen forecasting and pricing strategy. Built dashboards and Excel automations that cut manual reporting time by 30%, and cleaned up 5,000+ SAP and HubSpot records.</p>
+<p style="margin: 0; color: #555555; font-size: 13px">Power BI · Excel · SAP · HubSpot</p>
+</div>
+<div class="card" style="background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 8px; box-shadow: 5px 5px 0 #111">
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #444444">SUMMER 2024 · DUBAI, UAE</p>
+<h3 style="margin: 0; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-size: 22px; line-height: 1.2">TerraPay</h3>
+<p style="margin: 0; font-weight: 700; font-size: 15px">Data Science Intern</p>
+<p style="margin: 0; color: #2A2A2A; font-size: 15px">Built Python API pipelines that pulled real-time currency exchange data every 5 minutes, processing 150,000+ records, then tested forecasting models and turned them into reusable analysis workflows.</p>
+<p style="margin: 0; color: #555555; font-size: 13px">Python · APIs · Forecasting</p>
+</div>
+</div>
+</section>
+
+
+
+</div>
+</div>
+<script is:inline src="/site.js"></script>
+
+</body>
+</html>

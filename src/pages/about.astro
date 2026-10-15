@@ -1,0 +1,466 @@
+---
+// about page. Edit the text right in the HTML below.
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Siya Bhatkal · About me</title>
+<meta name="description" content="Raised in Dubai with roots in Honnavar, India. Five languages, a few favorite trips and life off the clock.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&amp;family=Atkinson+Hyperlegible+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style is:global>
+
+body{margin:0;background:#E6EDEE}
+a{color:#111111}a:hover{color:#444444}
+.fx *{transform-box:fill-box}
+@keyframes cloud{from{transform:translateX(-300px)}to{transform:translateX(1900px)}}
+@keyframes plane{0%{transform:translate(-200px,30px)}100%{transform:translate(1900px,-50px)}}
+@keyframes wave{from{transform:translateX(0)}to{transform:translateX(-200px)}}
+@keyframes boat{from{transform:translateX(-160px)}to{transform:translateX(1760px)}}
+@keyframes rock{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
+@keyframes wander{
+ 0%{left:70%;top:12%}
+ 14%{left:84%;top:30%}
+ 28%{left:62%;top:48%}
+ 42%{left:34%;top:34%}
+ 56%{left:6%;top:52%}
+ 70%{left:18%;top:14%}
+ 84%{left:46%;top:8%}
+ 100%{left:70%;top:12%}}
+@keyframes hover{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(3deg)}}
+@keyframes legs{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(14deg)}}
+@keyframes blinkEye{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+@keyframes shadow{0%,100%{transform:scaleX(1);opacity:.18}50%{transform:scaleX(.75);opacity:.1}}
+@keyframes hopA{0%{transform:translateY(0) rotate(0) scale(1,1)}15%{transform:translateY(4px) scale(1.12,.88)}45%{transform:translateY(-46px) rotate(-360deg) scale(.95,1.08)}75%{transform:translateY(0) rotate(-360deg) scale(1.1,.9)}100%{transform:translateY(0) rotate(-360deg) scale(1,1)}}
+@keyframes hopB{0%{transform:translateY(0) rotate(0) scale(1,1)}15%{transform:translateY(4px) scale(1.12,.88)}45%{transform:translateY(-46px) rotate(360deg) scale(.95,1.08)}75%{transform:translateY(0) rotate(360deg) scale(1.1,.9)}100%{transform:translateY(0) rotate(360deg) scale(1,1)}}
+@keyframes popA{0%{opacity:1;transform:rotate(var(--a)) translateY(0) scale(.2)}100%{opacity:0;transform:rotate(var(--a)) translateY(-84px) scale(1)}}
+@keyframes popB{0%{opacity:1;transform:rotate(var(--a)) translateY(0) scale(.2)}100%{opacity:0;transform:rotate(var(--a)) translateY(-84px) scale(1)}}
+@keyframes bubA{0%{opacity:0;transform:translateY(6px) scale(.85)}100%{opacity:1;transform:none}}
+@keyframes bubB{0%{opacity:0;transform:translateY(6px) scale(.85)}100%{opacity:1;transform:none}}
+@keyframes bang{0%{opacity:0;transform:translateY(6px) scale(.4)}20%{opacity:1;transform:translateY(-4px) scale(1.2)}70%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes cursor{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+
+.cloudA{animation:cloud 120s linear infinite}
+.cloudB{animation:cloud 170s linear infinite}
+.plane{animation:plane 40s linear infinite}
+.wave{animation:wave 9s linear infinite}
+.wave2{animation:wave 14s linear infinite reverse}
+.boat{animation:boat 60s linear infinite}
+.rock{animation:rock 2.6s ease-in-out infinite;transform-origin:50% 100%}
+.beacon{animation:blink 1.6s ease-in-out infinite}
+
+.siya{position:fixed;z-index:30;width:120px;height:210px;margin:0;padding:0;border:0;background:none;cursor:pointer;animation:wander 54s cubic-bezier(.45,.05,.55,.95) infinite}
+.siya:hover,.siya:focus-visible,.siya:hover .bod{animation-play-state:paused}
+.siya:focus-visible{outline:3px dashed #111;outline-offset:6px;border-radius:12px}
+.siya .bod{display:block;width:100%;height:100%;animation:hover 3.6s ease-in-out infinite}
+.siya .flip{display:block;width:100%;height:100%;transform-origin:50% 70%}
+.siya .leg{animation:legs 1.4s ease-in-out infinite;transform-origin:50% 0%}
+.siya .leg2{animation:legs 1.4s ease-in-out infinite reverse;transform-origin:50% 0%}
+.siya .eye{animation:blinkEye 4.5s infinite;transform-origin:50% 50%}
+.siya .shad{position:absolute;left:30px;bottom:-26px;width:60px;height:10px;border-radius:50%;background:#111;animation:shadow 3.6s ease-in-out infinite}
+.siya.jA .flip{animation:hopA .85s cubic-bezier(.3,.7,.3,1)}
+.siya.jB .flip{animation:hopB .85s cubic-bezier(.3,.7,.3,1)}
+.siya .spark{position:absolute;left:50%;top:62%;width:16px;height:16px;margin:-8px;opacity:0;pointer-events:none}
+.siya.jA .spark{animation:popA .7s ease-out}
+.siya.jB .spark{animation:popB .7s ease-out}
+.siya .bangs{position:absolute;right:-6px;top:58px;opacity:0;font:700 28px/1 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif;color:#111;pointer-events:none}
+.siya.jA .bangs{animation:bang .9s ease-out}
+.siya.jB .bangs{animation:bang .9s ease-out}
+.bubble{position:absolute;bottom:100%;left:50%;margin:0 0 6px -115px;width:230px;box-sizing:border-box;padding:10px 14px 12px;border:2.5px solid #111;border-radius:10px;background:#FFFFFF;color:#111;font:500 13px/1.4 'Atkinson Hyperlegible Mono', ui-monospace, monospace;text-align:left;box-shadow:4px 4px 0 #111;pointer-events:none}
+.bubble .nm{display:block;font:700 11px/1 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.bubble .cur{position:absolute;right:10px;bottom:4px;font-size:10px;animation:cursor .8s ease-in-out infinite}
+.siya.jA .bubble{animation:bubA .35s ease both}
+.siya.jB .bubble{animation:bubB .35s ease both}
+@keyframes segIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes live{0%,100%{opacity:1}50%{opacity:.2}}
+.seg{transform-origin:0 50%;animation:segIn .35s ease both}
+.live{animation:live 1.4s ease-in-out infinite}
+@keyframes rainDrop{0%{transform:translateY(-10px);opacity:0}20%{opacity:1}100%{transform:translateY(60px);opacity:0}}
+@keyframes auto{from{transform:translateX(1750px)}to{transform:translateX(-250px)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes palm{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2.5deg)}}
+@keyframes kiteSw{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(5deg)}}
+@keyframes perch{0%,86%,100%{transform:translateY(0)}90%{transform:translateY(-3px)}}
+.rainD{animation:rainDrop 1.3s linear infinite}
+.auto{animation:auto 30s linear infinite}
+.bounce{animation:bounce .35s ease-in-out infinite}
+.palm{animation:palm 5s ease-in-out infinite;transform-origin:50% 100%}
+.kiteSw{animation:kiteSw 3.2s ease-in-out infinite;transform-origin:0% 100%}
+.perch{animation:perch 5s ease-in-out infinite}
+.lang{transition:background .15s ease}
+.lang:hover{background:#F1F2EA}
+.lang:focus-visible{outline:3px dashed #111;outline-offset:-4px}
+.polaroid{transition:transform .2s ease}
+.polaroid:hover{transform:rotate(0deg) translateY(-6px) !important}
+.card{transition:transform .15s ease, box-shadow .15s ease}
+.card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 #111}
+.btn{transition:transform .12s ease, box-shadow .12s ease}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #111}
+.btn:active{transform:translate(2px,2px);box-shadow:0 0 0 #111}
+@media (max-width: 700px){.siya{width:90px;height:158px}.bubble{width:180px;margin-left:-90px}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}.siya{left:78%;top:18%}}
+
+/* ---- night mode ---- */
+@keyframes star{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes glowp{0%,100%{opacity:.75}50%{opacity:1}}
+.scenebox,.contentbox{transition:filter .7s ease}
+.night .scenebox{filter:invert(1) hue-rotate(180deg) brightness(.85)}
+.night .contentbox{filter:invert(1) hue-rotate(180deg)}
+.night .contentbox img,.night .contentbox .keep{filter:invert(1) hue-rotate(180deg)}
+.nightfx{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .8s ease}
+.night .nightfx{opacity:1}
+.star{animation:star 3s ease-in-out infinite}
+.glowp{animation:glowp 2.2s ease-in-out infinite}
+.modebtn{width:44px;height:44px;border:2px solid #111;border-radius:999px;background:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;box-shadow:3px 3px 0 #111;transition:transform .12s ease}
+.modebtn:hover{transform:translate(-1px,-1px)}
+.modebtn:focus-visible{outline:3px dashed #111;outline-offset:3px}
+
+.lang .arrow{visibility:hidden}
+.lang[aria-pressed="true"] .arrow{visibility:visible}
+
+.modebtn .ic-sun{display:none}
+.night .modebtn .ic-moon{display:none}
+.night .modebtn .ic-sun{display:inline}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:16px;top:16px;z-index:100;background:#fff;padding:10px 14px;border:2px solid #111;border-radius:10px}
+@media (max-width: 640px){h1{font-size:48px !important}header nav{flex-wrap:nowrap !important;gap:0 !important;padding:4px !important}header nav a{padding:8px 9px !important;font-size:13px;white-space:nowrap;min-height:40px}header nav a svg{display:none}header{gap:10px !important}}
+</style>
+<script is:inline>try{if(localStorage.getItem('siya-night')==='1')document.documentElement.classList.add('pre-night')}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#top">Skip to content</a>
+<div id="root" class="" style="position: relative; min-height: 100vh; color: #111111; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif, Helvetica, sans-serif; font-size: 17px; line-height: 1.6">
+
+<div class="scenebox" style="position: fixed; inset: 0; z-index: 0; overflow: hidden; background: #E6EDEE" aria-hidden="true">
+<svg class="fx" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice" width="100%" height="100%" style="display: block">
+<!-- summer sun -->
+<circle cx="260" cy="170" r="54" fill="none" stroke="#B9B8AA" stroke-width="2"></circle>
+<g stroke="#CFCEC1" stroke-width="2" stroke-linecap="round"><line x1="260" y1="92" x2="260" y2="76"></line><line x1="260" y1="248" x2="260" y2="264"></line><line x1="182" y1="170" x2="166" y2="170"></line><line x1="338" y1="170" x2="354" y2="170"></line><line x1="205" y1="115" x2="194" y2="104"></line><line x1="315" y1="225" x2="326" y2="236"></line><line x1="315" y1="115" x2="326" y2="104"></line><line x1="205" y1="225" x2="194" y2="236"></line></g>
+<!-- monsoon clouds with rain -->
+<g class="cloudA" style="animation-delay: -50s"><g fill="#E6EDEE" stroke="#B9B8AA" stroke-width="2">
+<path d="M150 230 a28 28 0 0 1 44 -24 a36 36 0 0 1 66 8 a24 24 0 0 1 12 44 h-118 a17 17 0 0 1 -4 -28 z"></path>
+</g><g stroke="#C9C8BB" stroke-width="1.6" stroke-linecap="round">
+<line class="rainD" x1="180" y1="268" x2="176" y2="280"></line><line class="rainD d1" x1="205" y1="268" x2="201" y2="280"></line><line class="rainD d2" x1="230" y1="268" x2="226" y2="280"></line><line class="rainD d3" x1="255" y1="268" x2="251" y2="280"></line>
+</g></g>
+<g class="cloudB" style="animation-delay: -120s" fill="#E6EDEE" stroke="#C9C8BB" stroke-width="2">
+<path d="M150 120 a22 22 0 0 1 34 -18 a30 30 0 0 1 54 6 a20 20 0 0 1 10 36 h-94 a14 14 0 0 1 -4 -24 z"></path>
+</g>
+<!-- kites in the sky -->
+<g transform="translate(1180 210)"><g class="kiteSw" style="animation-duration: 4s">
+<path d="M0 220 Q-10 120 6 34" fill="none" stroke="#CFCEC1" stroke-width="1.3"></path>
+<path d="M6 0 L22 18 L6 38 L-10 18 Z" fill="#E6EDEE" stroke="#9C9B8E" stroke-width="1.8"></path><path d="M6 0 L6 38 M-10 18 L22 18" stroke="#B9B8AA" stroke-width="1.2"></path>
+</g></g>
+<g transform="translate(1340 300)"><g class="kiteSw" style="animation-duration: 3.4s; animation-delay: -1s">
+<path d="M0 200 Q12 110 -4 28" fill="none" stroke="#CFCEC1" stroke-width="1.3"></path>
+<path d="M-4 0 L10 14 L-4 30 L-18 14 Z" fill="#9C9B8E" stroke="#9C9B8E" stroke-width="1.8"></path>
+</g></g>
+<!-- distant hills -->
+<path d="M0 760 Q160 690 320 730 T640 712 T980 724 T1320 700 T1600 720" fill="none" stroke="#D2D1C4" stroke-width="2"></path>
+<path d="M0 800 Q200 750 420 780 T860 770 T1300 776 T1600 760" fill="none" stroke="#C6C5B8" stroke-width="1.6"></path>
+<!-- distant temple tower -->
+<g fill="#E6EDEE" stroke="#BEBDB0" stroke-width="1.8" stroke-linejoin="round">
+<path d="M1010 880 L1010 800 L1100 800 L1100 880"></path>
+<path d="M1016 800 L1022 770 L1088 770 L1094 800 M1026 770 L1032 744 L1078 744 L1084 770 M1036 744 L1042 722 L1068 722 L1074 744"></path>
+<path d="M1046 722 Q1055 700 1064 722"></path><line x1="1055" y1="702" x2="1055" y2="690"></line>
+</g>
+<!-- power line with birds -->
+<g stroke="#A9A89B" stroke-width="2" fill="none">
+<line x1="560" y1="880" x2="560" y2="640"></line><line x1="545" y1="652" x2="575" y2="652"></line>
+<line x1="1260" y1="880" x2="1260" y2="640"></line><line x1="1245" y1="652" x2="1275" y2="652"></line>
+<path d="M545 652 Q910 720 1245 652" stroke-width="1.3"></path><path d="M575 652 Q910 734 1275 652" stroke-width="1.3"></path>
+</g>
+<g fill="#6E6D62">
+<g class="perch"><path d="M760 684 q6 -10 12 0 q-6 4 -12 0z"></path><circle cx="770" cy="679" r="3"></circle></g>
+<g class="perch d2"><path d="M800 690 q6 -10 12 0 q-6 4 -12 0z"></path><circle cx="810" cy="685" r="3"></circle></g>
+<g class="perch d1"><path d="M1010 696 q6 -10 12 0 q-6 4 -12 0z"></path><circle cx="1020" cy="691" r="3"></circle></g>
+</g>
+<!-- coconut palms -->
+<g transform="translate(120 880)"><g class="palm" fill="none" stroke="#8C8A7E" stroke-width="2" stroke-linecap="round">
+<path d="M0 0 Q14 -120 -6 -260"></path><path d="M10 0 Q24 -120 4 -260"></path>
+<path d="M0 -260 Q-60 -280 -110 -230 M0 -260 Q60 -290 116 -240 M0 -260 Q-40 -320 -96 -312 M0 -260 Q44 -324 100 -306 M0 -260 Q6 -320 -4 -340 M0 -260 Q-70 -250 -96 -200 M0 -260 Q70 -256 100 -206"></path>
+<circle cx="-6" cy="-252" r="6"></circle><circle cx="8" cy="-250" r="6"></circle>
+</g></g>
+<g transform="translate(1480 880)"><g class="palm" style="animation-delay: -2s" fill="none" stroke="#8C8A7E" stroke-width="2" stroke-linecap="round">
+<path d="M0 0 Q-16 -100 4 -220"></path><path d="M10 0 Q-6 -100 14 -220"></path>
+<path d="M8 -220 Q-50 -240 -96 -196 M8 -220 Q66 -246 108 -200 M8 -220 Q-30 -276 -80 -270 M8 -220 Q48 -280 92 -264"></path>
+</g></g>
+<!-- tiled-roof houses -->
+<g fill="#E6EDEE" stroke="#8C8A7E" stroke-width="2" stroke-linejoin="round">
+<rect x="250" y="790" width="170" height="90"></rect>
+<path d="M226 794 L280 736 L390 736 L444 794 Z"></path>
+<rect x="320" y="830" width="34" height="50"></rect><rect x="270" y="812" width="30" height="26"></rect><rect x="374" y="812" width="30" height="26"></rect>
+<line x1="262" y1="790" x2="262" y2="880"></line><line x1="408" y1="790" x2="408" y2="880"></line>
+<rect x="640" y="800" width="140" height="80"></rect>
+<path d="M620 804 L664 756 L756 756 L800 804 Z"></path>
+<rect x="694" y="836" width="30" height="44"></rect><rect x="656" y="820" width="26" height="22"></rect>
+<rect x="1130" y="808" width="110" height="72"></rect>
+<path d="M1114 812 L1150 772 L1220 772 L1256 812 Z"></path>
+<rect x="1170" y="840" width="26" height="40"></rect>
+</g>
+<g stroke="#B9B8AA" stroke-width="1.2">
+<path d="M240 780 L432 780 M254 766 L418 766 M268 752 L404 752"></path>
+<path d="M632 792 L788 792 M646 778 L774 778 M660 766 L760 766"></path>
+<path d="M1124 800 L1246 800 M1136 786 L1234 786"></path>
+</g>
+<!-- mango tree -->
+<g transform="translate(920 880)" fill="#E6EDEE" stroke="#8C8A7E" stroke-width="2" stroke-linejoin="round">
+<path d="M-6 0 L-4 -70 M6 0 L4 -70" fill="none"></path>
+<path d="M-4 -70 Q-30 -84 -40 -100 M4 -70 Q26 -86 38 -104" fill="none"></path>
+<path d="M-90 -110 Q-100 -170 -40 -180 Q-10 -220 40 -190 Q100 -186 92 -126 Q96 -84 40 -88 Q0 -76 -40 -88 Q-90 -80 -90 -110 Z"></path>
+<g fill="#8C8A7E" stroke="none"><ellipse cx="-40" cy="-112" rx="5" ry="7"></ellipse><ellipse cx="22" cy="-104" rx="5" ry="7"></ellipse><ellipse cx="50" cy="-140" rx="5" ry="7"></ellipse><ellipse cx="-10" cy="-150" rx="5" ry="7"></ellipse></g>
+</g>
+<!-- cricket stumps -->
+<g stroke="#8C8A7E" stroke-width="2.2" stroke-linecap="round"><line x1="500" y1="880" x2="500" y2="850"></line><line x1="508" y1="880" x2="508" y2="850"></line><line x1="516" y1="880" x2="516" y2="850"></line><line x1="498" y1="848" x2="518" y2="848" stroke-width="1.6"></line></g>
+<!-- ground -->
+<line x1="0" y1="880" x2="1600" y2="880" stroke="#8C8A7E" stroke-width="2"></line>
+<line x1="0" y1="930" x2="1600" y2="930" stroke="#CFCEC1" stroke-width="1.5" stroke-dasharray="26 22"></line>
+<!-- auto-rickshaw -->
+<g class="auto" style="animation-delay: -8s"><g transform="translate(0 908)"><g class="bounce" fill="#E6EDEE" stroke="#6E6D62" stroke-width="2" stroke-linejoin="round">
+<path d="M0 -6 Q2 -46 34 -50 L96 -50 Q104 -50 104 -40 L104 -6 Z"></path>
+<path d="M30 -50 L30 -6 M70 -50 L70 -6"></path>
+<path d="M4 -34 Q8 -44 26 -46 L26 -30 Z" fill="#D6D5C9"></path>
+<path d="M-6 -6 L110 -6" stroke-width="2.4"></path>
+<circle cx="14" cy="4" r="9"></circle><circle cx="90" cy="4" r="9"></circle>
+<circle cx="14" cy="4" r="2.5" fill="#6E6D62"></circle><circle cx="90" cy="4" r="2.5" fill="#6E6D62"></circle>
+</g></g></g>
+<!-- grass tufts -->
+<g stroke="#A9A89B" stroke-width="1.6" fill="none" stroke-linecap="round">
+<path d="M180 880 l-4 -10 M184 880 l0 -12 M188 880 l4 -10"></path><path d="M600 880 l-4 -10 M604 880 l0 -12 M608 880 l4 -10"></path>
+<path d="M1040 880 l-4 -10 M1044 880 l0 -12 M1048 880 l4 -10"></path><path d="M1400 880 l-4 -10 M1404 880 l0 -12 M1408 880 l4 -10"></path>
+</g>
+</svg>
+</div>
+
+
+
+<div class="nightfx" aria-hidden="true">
+<svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice" width="100%" height="100%" style="display: block">
+<circle class="star" style="animation-delay: -1.19s" cx="977" cy="132" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.48s" cx="1017" cy="103" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.02s" cx="903" cy="283" r="2.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.28s" cx="420" cy="202" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.66s" cx="769" cy="29" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.15s" cx="922" cy="380" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.54s" cx="1079" cy="339" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.92s" cx="151" cy="77" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.82s" cx="234" cy="63" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.46s" cx="391" cy="158" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.22s" cx="1404" cy="439" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.1s" cx="1118" cy="490" r="2.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.4s" cx="203" cy="162" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.81s" cx="395" cy="237" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.4s" cx="54" cy="344" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.2s" cx="191" cy="331" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.02s" cx="269" cy="252" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.87s" cx="1152" cy="233" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.81s" cx="108" cy="289" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.54s" cx="350" cy="154" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.59s" cx="658" cy="341" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.5s" cx="441" cy="168" r="2.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.41s" cx="384" cy="158" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.06s" cx="532" cy="38" r="1.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.54s" cx="1055" cy="302" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.32s" cx="523" cy="498" r="2.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.64s" cx="1351" cy="241" r="2.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.06s" cx="825" cy="516" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.5s" cx="490" cy="195" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.21s" cx="1467" cy="393" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -0.04s" cx="731" cy="47" r="1.5" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.29s" cx="1300" cy="399" r="1.8" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -2.61s" cx="133" cy="63" r="2.2" fill="#F6F1DE"></circle>
+<circle class="star" style="animation-delay: -1.8s" cx="1393" cy="517" r="1.8" fill="#F6F1DE"></circle><circle cx="260" cy="170" r="110" fill="#F6E7B0" opacity="0.08"></circle><circle cx="260" cy="170" r="44" fill="#F3EACB"></circle><circle cx="270" cy="162" r="7" fill="#E2D6AE"></circle><circle cx="246" cy="182" r="5" fill="#E2D6AE"></circle>
+<rect class="glowp" style="animation-delay: -0.3s" x="270" y="812" width="30" height="26" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.1s" x="374" y="812" width="30" height="26" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -0.7s" x="656" y="820" width="26" height="22" fill="#FFD27A"></rect>
+<rect class="glowp" style="animation-delay: -1.6s" x="320" y="830" width="34" height="50" fill="#E8B65A"></rect>
+<rect class="glowp" style="animation-delay: -0.9s" x="694" y="836" width="30" height="44" fill="#E8B65A"></rect>
+<rect class="glowp" style="animation-delay: -1.3s" x="1170" y="840" width="26" height="40" fill="#E8B65A"></rect><circle class="star" style="animation-delay: -0.32s" cx="1207" cy="787" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -0.75s" cx="627" cy="785" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -2.32s" cx="1099" cy="837" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -1.69s" cx="189" cy="836" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -0.98s" cx="1095" cy="857" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -1.54s" cx="1478" cy="815" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -1.36s" cx="1152" cy="841" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -1.52s" cx="567" cy="869" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -1.57s" cx="591" cy="851" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -2.68s" cx="474" cy="837" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -0.41s" cx="309" cy="830" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -1.33s" cx="208" cy="865" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -0.72s" cx="209" cy="807" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -2.01s" cx="310" cy="799" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -2.82s" cx="1377" cy="864" r="2.6" fill="#FFE38A"></circle><circle class="star" style="animation-delay: -1.1s" cx="578" cy="797" r="2.6" fill="#FFE38A"></circle>
+</svg>
+</div>
+
+<div class="contentbox" style="position: relative; z-index: 10">
+
+<header style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="/" style="font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 22px; text-decoration: none">Siya Bhatkal</a>
+<div style="display: flex; align-items: center; gap: 12px">
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 5px; border: 2px solid #111; border-radius: 999px; background: #FFFFFF">
+<a href="/" style="min-height: 40px; box-sizing: border-box; display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 999px; color: #333333; font-weight: 500; text-decoration: none">Projects &amp; work</a>
+<a href="#top" aria-current="page" class="keep" style="min-height: 40px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; background: #E3A21A; color: #111111; font-weight: 700; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-7-6 11-3-5-5 3z"></path></svg>About me</a>
+<a href="/lately" style="min-height: 40px; box-sizing: border-box; display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 999px; color: #333333; font-weight: 500; text-decoration: none">Life lately</a>
+</nav>
+<button type="button" class="modebtn" id="modebtn" aria-pressed="false" aria-label="Night mode"><svg class="ic-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"></path></svg><svg class="ic-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"></path></svg></button>
+</div>
+</header>
+
+<section id="top" style="max-width: 1240px; margin: 0 auto; padding: 72px 24px 0; min-height: 540px; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 48px">
+<div style="flex: 1 1 460px; max-width: 580px; display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 14px; font-weight: 700; color: #8A5A00">02 — ABOUT ME</p>
+<h1 style="margin: 0; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 72px; line-height: 0.98; letter-spacing: 0">Where I come from.</h1>
+<p style="margin: 0; font-size: 20px; color: #2A2A2A">My family is from Honnavar, a small coastal town in Karnataka, India. I grew up in Dubai and spent summers back home with family, which is how I ended up speaking five languages. Growing up between two places taught me to adapt quickly and connect with all kinds of people.</p>
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 14px; color: #444444">→ Pick a language on the card to say hi.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px">
+<a href="#about" class="keep btn" style="min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; padding: 12px 22px; border: 2px solid #111; border-radius: 12px; background: #E3A21A; color: #111111; font-weight: 700; text-decoration: none; box-shadow: 4px 4px 0 #111">More about me</a>
+<a href="/lately" class="btn" style="min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border: 2px solid #111; border-radius: 12px; background: #FFFFFF; color: #111111; font-weight: 700; text-decoration: none; box-shadow: 4px 4px 0 #111">Next stop: Texas
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+
+<aside aria-label="Language select" style="flex: 0 1 400px; min-width: 0; background: #FFFFFF; border: 2.5px solid #111; border-radius: 16px; box-shadow: 6px 6px 0 #111; overflow: hidden">
+<div class="keep" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 18px; background: #E3A21A; color: #111111; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px">
+<span>SELECT LANGUAGE</span><span>5/5 UNLOCKED</span>
+</div>
+<div style="padding: 26px 22px; border-bottom: 2.5px solid #111; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; min-height: 150px; box-sizing: border-box; justify-content: center" aria-live="polite">
+<p id="greet" lang="en" style="margin: 0; font-size: 44px; font-weight: 700; line-height: 1.2">Hello!</p>
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 14px; color: #444444" id="greet-sub">Hello · English</p>
+</div>
+<button type="button" class="lang" aria-pressed="true" data-i="0" data-script="Hello!" data-roman="Hello" data-name="English" data-tag="en" style="width: 100%; min-height: 44px; display: flex; align-items: center; gap: 10px; padding: 8px 14px; border: 0; border-bottom: 1.5px solid #111; background: transparent; color: #111; font: 700 15px 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; text-align: left; cursor: pointer">
+<span class="arrow" style="width: 14px; font-family: \'Atkinson Hyperlegible Mono\', ui-monospace, monospace">▶</span>
+<span style="flex: 1">English</span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 12px; color: #555555">EN</span>
+</button>
+<button type="button" class="lang" aria-pressed="false" data-i="1" data-script="नमस्ते" data-roman="Namaste" data-name="Hindi" data-tag="hi" style="width: 100%; min-height: 44px; display: flex; align-items: center; gap: 10px; padding: 8px 14px; border: 0; border-bottom: 1.5px solid #111; background: transparent; color: #111; font: 700 15px 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; text-align: left; cursor: pointer">
+<span class="arrow" style="width: 14px; font-family: \'Atkinson Hyperlegible Mono\', ui-monospace, monospace">▶</span>
+<span style="flex: 1">Hindi</span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 12px; color: #555555">HI</span>
+</button>
+<button type="button" class="lang" aria-pressed="false" data-i="2" data-script="مرحبا" data-roman="Marhaba" data-name="Arabic" data-tag="ar" style="width: 100%; min-height: 44px; display: flex; align-items: center; gap: 10px; padding: 8px 14px; border: 0; border-bottom: 1.5px solid #111; background: transparent; color: #111; font: 700 15px 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; text-align: left; cursor: pointer">
+<span class="arrow" style="width: 14px; font-family: \'Atkinson Hyperlegible Mono\', ui-monospace, monospace">▶</span>
+<span style="flex: 1">Arabic</span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 12px; color: #555555">AR</span>
+</button>
+<button type="button" class="lang" aria-pressed="false" data-i="3" data-script="ನಮಸ್ಕಾರ" data-roman="Namaskara" data-name="Kannada" data-tag="kn" style="width: 100%; min-height: 44px; display: flex; align-items: center; gap: 10px; padding: 8px 14px; border: 0; border-bottom: 1.5px solid #111; background: transparent; color: #111; font: 700 15px 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; text-align: left; cursor: pointer">
+<span class="arrow" style="width: 14px; font-family: \'Atkinson Hyperlegible Mono\', ui-monospace, monospace">▶</span>
+<span style="flex: 1">Kannada</span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 12px; color: #555555">KN</span>
+</button>
+<button type="button" class="lang" aria-pressed="false" data-i="4" data-script="नमस्कार" data-roman="Namaskar" data-name="Konkani" data-tag="kok" style="width: 100%; min-height: 44px; display: flex; align-items: center; gap: 10px; padding: 8px 14px; border: 0; border-bottom: 1.5px solid #111; background: transparent; color: #111; font: 700 15px 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; text-align: left; cursor: pointer">
+<span class="arrow" style="width: 14px; font-family: \'Atkinson Hyperlegible Mono\', ui-monospace, monospace">▶</span>
+<span style="flex: 1">Konkani</span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 12px; color: #555555">KOK</span>
+</button>
+
+<p style="margin: 0; padding: 12px 18px; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 12px; color: #555555">Same greeting, five ways. I switch depending on who's in the room.</p>
+</aside>
+</section>
+
+<section id="about" style="max-width: 1240px; margin: 0 auto; padding: 220px 24px 0">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.05">A little more about me</h2>
+<p style="margin: 0; font-size: 18px; color: #2A2A2A">Growing up in Dubai, my after-school schedule was always full: public speaking, dance, abacus and art classes.</p>
+<p style="margin: 0; font-size: 18px; color: #2A2A2A">Each one stuck with me in its own way. Abacus made me comfortable with numbers early on. Public speaking taught me to explain ideas clearly to any audience. Art and dance gave me an eye for design and the patience to keep practicing until something works.</p>
+<p style="margin: 0; font-size: 18px; color: #2A2A2A">I still use all of that today, whether I'm presenting findings to a team or building a dashboard that has to be both accurate and easy to read.</p>
+</div>
+<div class="card" style="background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 24px; box-shadow: 5px 5px 0 #111; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #555555">FACT FILE</p>
+<div style="display: grid; grid-template-columns: 120px 1fr; row-gap: 10px; font-size: 16px">
+<span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #555555">ROOTS</span><span style="font-weight: 700">Honnavar, Karnataka, India</span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #555555">RAISED</span><span style="font-weight: 700">Dubai, UAE</span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #555555">NOW</span><span style="font-weight: 700">College Station, Texas</span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #555555">STUDYING</span><span style="font-weight: 700">CS + Statistics minor</span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px; color: #555555">LANGUAGES</span><span style="font-weight: 700">English, Hindi, Arabic, Kannada, Konkani</span>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<section id="travel" style="max-width: 1240px; margin: 0 auto; padding: 160px 24px 0">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px; margin-bottom: 28px">
+<div>
+<h2 style="margin: 0 0 6px; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.1">Travel log</h2>
+<p style="margin: 0; color: #444444">A few favorite trips.</p>
+</div>
+<span style="padding: 6px 12px; border: 2px solid #111; border-radius: 999px; background: #FFFFFF; font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 13px">STAMPS COLLECTED: 4</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px">
+<figure class="card" style="margin: 0; background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 12px; box-shadow: 5px 5px 0 #111; display: flex; flex-direction: column; gap: 12px">
+<div style="position: relative; aspect-ratio: 4 / 3; border: 1.5px solid #111; border-radius: 10px; overflow: hidden">
+<img src="/travel/galveston.jpg" loading="lazy" decoding="async" alt="Jellyfish drifting in a blue aquarium tank" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%">
+<span style="position: absolute; top: 10px; right: 10px; width: 34px; height: 34px; border: 2px solid #111; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; transform: rotate(-12deg)">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-7-6 11-3-5-5 3z"></path></svg>
+</span>
+</div>
+<figcaption style="display: flex; flex-direction: column; gap: 2px; padding: 0 4px 4px">
+<span style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 8px; align-items: baseline"><span style="font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 20px">Galveston, Texas</span><span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 12px; color: #555555">2026</span></span>
+<span style="font-size: 15px; color: #2A2A2A">Girls’ trip</span>
+</figcaption>
+</figure>
+<figure class="card" style="margin: 0; background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 12px; box-shadow: 5px 5px 0 #111; display: flex; flex-direction: column; gap: 12px">
+<div style="position: relative; aspect-ratio: 4 / 3; border: 1.5px solid #111; border-radius: 10px; overflow: hidden">
+<img src="/travel/norway.jpg" loading="lazy" decoding="async" alt="Red cabin with a grass roof beside a fjord and mountains" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%">
+<span style="position: absolute; top: 10px; right: 10px; width: 34px; height: 34px; border: 2px solid #111; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; transform: rotate(-12deg)">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-7-6 11-3-5-5 3z"></path></svg>
+</span>
+</div>
+<figcaption style="display: flex; flex-direction: column; gap: 2px; padding: 0 4px 4px">
+<span style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 8px; align-items: baseline"><span style="font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 20px">Norway</span><span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 12px; color: #555555">2025</span></span>
+<span style="font-size: 15px; color: #2A2A2A">Family trip</span>
+</figcaption>
+</figure>
+<figure class="card" style="margin: 0; background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 12px; box-shadow: 5px 5px 0 #111; display: flex; flex-direction: column; gap: 12px">
+<div style="position: relative; aspect-ratio: 4 / 3; border: 1.5px solid #111; border-radius: 10px; overflow: hidden">
+<img src="/travel/ha-long-bay.jpg" loading="lazy" decoding="async" alt="Boats sailing between limestone islands in Ha Long Bay" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 75%">
+<span style="position: absolute; top: 10px; right: 10px; width: 34px; height: 34px; border: 2px solid #111; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; transform: rotate(-12deg)">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-7-6 11-3-5-5 3z"></path></svg>
+</span>
+</div>
+<figcaption style="display: flex; flex-direction: column; gap: 2px; padding: 0 4px 4px">
+<span style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 8px; align-items: baseline"><span style="font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 20px">Ha Long Bay, Vietnam</span><span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 12px; color: #555555">2024</span></span>
+<span style="font-size: 15px; color: #2A2A2A">Family trip</span>
+</figcaption>
+</figure>
+<figure class="card" style="margin: 0; background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 12px; box-shadow: 5px 5px 0 #111; display: flex; flex-direction: column; gap: 12px">
+<div style="position: relative; aspect-ratio: 4 / 3; border: 1.5px solid #111; border-radius: 10px; overflow: hidden">
+<img src="/travel/california.jpg" loading="lazy" decoding="async" alt="Coastal cliffs and ocean on a sunny California day" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%">
+<span style="position: absolute; top: 10px; right: 10px; width: 34px; height: 34px; border: 2px solid #111; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; transform: rotate(-12deg)">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-7-6 11-3-5-5 3z"></path></svg>
+</span>
+</div>
+<figcaption style="display: flex; flex-direction: column; gap: 2px; padding: 0 4px 4px">
+<span style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 8px; align-items: baseline"><span style="font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 20px">California</span><span style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 12px; color: #555555">Thanksgiving 2023</span></span>
+<span style="font-size: 15px; color: #2A2A2A">Thanksgiving with my sister</span>
+</figcaption>
+</figure>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 160px 24px 180px">
+<h2 style="margin: 0 0 24px; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.1">Off the clock</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<div class="card" style="background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 24px; box-shadow: 5px 5px 0 #111; display: flex; flex-direction: column; gap: 10px">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12"></path></svg>
+<h3 style="margin: 0; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 22px">Lifting</h3>
+<p style="margin: 0; color: #2A2A2A">Working out keeps me sane. Live workout stats are coming on the Texas page.</p>
+</div>
+<div class="card" style="background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 24px; box-shadow: 5px 5px 0 #111; display: flex; flex-direction: column; gap: 10px">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 3v18M3 12h18M5.6 5.6c3.5 3.5 9.3 3.5 12.8 0M5.6 18.4c3.5-3.5 9.3-3.5 12.8 0"></path></svg>
+<h3 style="margin: 0; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 22px">Watching sports</h3>
+<p style="margin: 0; color: #2A2A2A">I enjoy watching these teams.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span style="padding: 3px 10px; border: 1.5px solid #111; border-radius: 999px; font-size: 13px; font-weight: 700">RCB</span>
+<span style="padding: 3px 10px; border: 1.5px solid #111; border-radius: 999px; font-size: 13px; font-weight: 700">Ferrari</span>
+<span style="padding: 3px 10px; border: 1.5px solid #111; border-radius: 999px; font-size: 13px; font-weight: 700">Philadelphia Eagles</span>
+<span style="padding: 3px 10px; border: 1.5px solid #111; border-radius: 999px; font-size: 13px; font-weight: 700">OKC Thunder</span>
+</div>
+</div>
+<div class="card" style="background: #FFFFFF; border: 2px solid #111; border-radius: 16px; padding: 24px; box-shadow: 5px 5px 0 #111; display: flex; flex-direction: column; gap: 10px">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14l-2 16H7L5 4zM6 9h12M14 4l2-2"></path></svg>
+<h3 style="margin: 0; font-family: 'Century Gothic', 'CenturyGothic', 'Didact Gothic', sans-serif; font-weight: 700; font-size: 22px">Drink experiments</h3>
+<p style="margin: 0; color: #2A2A2A">Always trying new drink recipes. Up next: matcha with salted hazelnut cream.</p>
+</div>
+</div>
+</section>
+
+</div>
+</div>
+<script is:inline src="/site.js"></script>
+
+</body>
+</html>
